@@ -1,0 +1,372 @@
+- 2026-01-22T15:14:31.894+00:00 ggml_cuda_init: found 1 CUDA devices:
+- 2026-01-22T15:14:31.894+00:00   Device 0: Tesla T4, compute capability 7.5, VMM: yes
+- 2026-01-22T15:14:31.894+00:00 load_backend: loaded CUDA backend from /app/libggml-cuda.so
+- 2026-01-22T15:14:31.911+00:00 load_backend: loaded CPU backend from /app/libggml-cpu-cascadelake.so
+- 2026-01-22T15:14:31.912+00:00 build: 7801 (94242a62c) with GNU 11.4.0 for Linux x86_64
+- 2026-01-22T15:14:31.912+00:00 system info: n_threads = 2, n_threads_batch = 2, total_threads = 4
+- 2026-01-22T15:14:31.912+00:00 
+- 2026-01-22T15:14:31.912+00:00 system_info: n_threads = 2 (n_threads_batch = 2) / 4 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+- 2026-01-22T15:14:31.912+00:00 
+- 2026-01-22T15:14:31.912+00:00 Running without SSL
+- 2026-01-22T15:14:31.912+00:00 init: using 8 threads for HTTP server
+- 2026-01-22T15:14:31.913+00:00 start: binding port with default address family
+- 2026-01-22T15:14:31.914+00:00 main: loading model
+- 2026-01-22T15:14:31.914+00:00 srv    load_model: loading model '/repository/Qwen2.5-VL-3B-Instruct-Q8_0.gguf'
+- 2026-01-22T15:14:31.914+00:00 common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
+- 2026-01-22T15:14:32.457+00:00 llama_params_fit_impl: projected to use 3572 MiB of device memory vs. 14990 MiB of free device memory
+- 2026-01-22T15:14:32.457+00:00 llama_params_fit_impl: will leave 11417 >= 1024 MiB of free device memory, no changes needed
+- 2026-01-22T15:14:32.457+00:00 llama_params_fit: successfully fit params to free device memory
+- 2026-01-22T15:14:32.457+00:00 llama_params_fit: fitting params to free memory took 0.54 seconds
+- 2026-01-22T15:14:32.457+00:00 llama_model_load_from_file_impl: using device CUDA0 (Tesla T4) (0000:00:1e.0) - 14990 MiB free
+- 2026-01-22T15:14:32.489+00:00 llama_model_loader: direct I/O is enabled, disabling mmap
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: loaded meta data with 27 key-value pairs and 434 tensors from /repository/Qwen2.5-VL-3B-Instruct-Q8_0.gguf (version GGUF V3 (latest))
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   0:                       general.architecture str              = qwen2vl
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   1:                               general.type str              = model
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   2:                               general.name str              = Qwen2.5 VL 3B Instruct
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   4:                           general.basename str              = Qwen2.5-VL
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   5:                         general.size_label str              = 3B
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   6:                        qwen2vl.block_count u32              = 36
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   7:                     qwen2vl.context_length u32              = 128000
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   8:                   qwen2vl.embedding_length u32              = 2048
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv   9:                qwen2vl.feed_forward_length u32              = 11008
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv  10:               qwen2vl.attention.head_count u32              = 16
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv  11:            qwen2vl.attention.head_count_kv u32              = 2
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv  12:                     qwen2vl.rope.freq_base f32              = 1000000.000000
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv  13:   qwen2vl.attention.layer_norm_rms_epsilon f32              = 0.000001
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv  14:            qwen2vl.rope.dimension_sections arr[i32,4]       = [16, 24, 24, 0]
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv  15:                       tokenizer.ggml.model str              = gpt2
+- 2026-01-22T15:14:32.493+00:00 llama_model_loader: - kv  16:                         tokenizer.ggml.pre str              = qwen2
+- 2026-01-22T15:14:32.515+00:00 llama_model_loader: - kv  17:                      tokenizer.ggml.tokens arr[str,151936]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+- 2026-01-22T15:14:32.520+00:00 llama_model_loader: - kv  18:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - kv  19:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - kv  20:                tokenizer.ggml.eos_token_id u32              = 151645
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - kv  21:            tokenizer.ggml.padding_token_id u32              = 151643
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - kv  22:                tokenizer.ggml.bos_token_id u32              = 151643
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - kv  23:               tokenizer.ggml.add_bos_token bool             = false
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - kv  24:                    tokenizer.chat_template str              = {% set image_count = namespace(value=...
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - kv  25:               general.quantization_version u32              = 2
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - kv  26:                          general.file_type u32              = 7
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - type  f32:  181 tensors
+- 2026-01-22T15:14:32.543+00:00 llama_model_loader: - type q8_0:  253 tensors
+- 2026-01-22T15:14:32.543+00:00 print_info: file format = GGUF V3 (latest)
+- 2026-01-22T15:14:32.543+00:00 print_info: file type   = Q8_0
+- 2026-01-22T15:14:32.543+00:00 print_info: file size   = 3.05 GiB (8.50 BPW) 
+- 2026-01-22T15:14:32.679+00:00 load: 0 unused tokens
+- 2026-01-22T15:14:32.718+00:00 load: printing all EOG tokens:
+- 2026-01-22T15:14:32.718+00:00 load:   - 151643 ('<|endoftext|>')
+- 2026-01-22T15:14:32.718+00:00 load:   - 151645 ('<|im_end|>')
+- 2026-01-22T15:14:32.718+00:00 load:   - 151662 ('<|fim_pad|>')
+- 2026-01-22T15:14:32.718+00:00 load:   - 151663 ('<|repo_name|>')
+- 2026-01-22T15:14:32.718+00:00 load:   - 151664 ('<|file_sep|>')
+- 2026-01-22T15:14:32.718+00:00 load: special tokens cache size = 22
+- 2026-01-22T15:14:32.789+00:00 load: token to piece cache size = 0.9310 MB
+- 2026-01-22T15:14:32.789+00:00 print_info: arch                  = qwen2vl
+- 2026-01-22T15:14:32.789+00:00 print_info: vocab_only            = 0
+- 2026-01-22T15:14:32.789+00:00 print_info: no_alloc              = 0
+- 2026-01-22T15:14:32.789+00:00 print_info: n_ctx_train           = 128000
+- 2026-01-22T15:14:32.789+00:00 print_info: n_embd                = 2048
+- 2026-01-22T15:14:32.789+00:00 print_info: n_embd_inp            = 2048
+- 2026-01-22T15:14:32.789+00:00 print_info: n_layer               = 36
+- 2026-01-22T15:14:32.789+00:00 print_info: n_head                = 16
+- 2026-01-22T15:14:32.789+00:00 print_info: n_head_kv             = 2
+- 2026-01-22T15:14:32.789+00:00 print_info: n_rot                 = 128
+- 2026-01-22T15:14:32.789+00:00 print_info: n_swa                 = 0
+- 2026-01-22T15:14:32.789+00:00 print_info: is_swa_any            = 0
+- 2026-01-22T15:14:32.789+00:00 print_info: n_embd_head_k         = 128
+- 2026-01-22T15:14:32.789+00:00 print_info: n_embd_head_v         = 128
+- 2026-01-22T15:14:32.789+00:00 print_info: n_gqa                 = 8
+- 2026-01-22T15:14:32.789+00:00 print_info: n_embd_k_gqa          = 256
+- 2026-01-22T15:14:32.789+00:00 print_info: n_embd_v_gqa          = 256
+- 2026-01-22T15:14:32.789+00:00 print_info: f_norm_eps            = 0.0e+00
+- 2026-01-22T15:14:32.789+00:00 print_info: f_norm_rms_eps        = 1.0e-06
+- 2026-01-22T15:14:32.789+00:00 print_info: f_clamp_kqv           = 0.0e+00
+- 2026-01-22T15:14:32.789+00:00 print_info: f_max_alibi_bias      = 0.0e+00
+- 2026-01-22T15:14:32.789+00:00 print_info: f_logit_scale         = 0.0e+00
+- 2026-01-22T15:14:32.789+00:00 print_info: f_attn_scale          = 0.0e+00
+- 2026-01-22T15:14:32.789+00:00 print_info: n_ff                  = 11008
+- 2026-01-22T15:14:32.789+00:00 print_info: n_expert              = 0
+- 2026-01-22T15:14:32.789+00:00 print_info: n_expert_used         = 0
+- 2026-01-22T15:14:32.789+00:00 print_info: n_expert_groups       = 0
+- 2026-01-22T15:14:32.789+00:00 print_info: n_group_used          = 0
+- 2026-01-22T15:14:32.789+00:00 print_info: causal attn           = 1
+- 2026-01-22T15:14:32.789+00:00 print_info: pooling type          = -1
+- 2026-01-22T15:14:32.789+00:00 print_info: rope type             = 8
+- 2026-01-22T15:14:32.789+00:00 print_info: rope scaling          = linear
+- 2026-01-22T15:14:32.789+00:00 print_info: freq_base_train       = 1000000.0
+- 2026-01-22T15:14:32.789+00:00 print_info: freq_scale_train      = 1
+- 2026-01-22T15:14:32.789+00:00 print_info: n_ctx_orig_yarn       = 128000
+- 2026-01-22T15:14:32.789+00:00 print_info: rope_yarn_log_mul     = 0.0000
+- 2026-01-22T15:14:32.789+00:00 print_info: rope_finetuned        = unknown
+- 2026-01-22T15:14:32.789+00:00 print_info: mrope sections        = [16, 24, 24, 0]
+- 2026-01-22T15:14:32.789+00:00 print_info: model type            = 3B
+- 2026-01-22T15:14:32.789+00:00 print_info: model params          = 3.09 B
+- 2026-01-22T15:14:32.789+00:00 print_info: general.name          = Qwen2.5 VL 3B Instruct
+- 2026-01-22T15:14:32.789+00:00 print_info: vocab type            = BPE
+- 2026-01-22T15:14:32.789+00:00 print_info: n_vocab               = 151936
+- 2026-01-22T15:14:32.789+00:00 print_info: n_merges              = 151387
+- 2026-01-22T15:14:32.789+00:00 print_info: BOS token             = 151643 '<|endoftext|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: EOS token             = 151645 '<|im_end|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: EOT token             = 151645 '<|im_end|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: PAD token             = 151643 '<|endoftext|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: LF token              = 198 'Ċ'
+- 2026-01-22T15:14:32.789+00:00 print_info: FIM PRE token         = 151659 '<|fim_prefix|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: FIM SUF token         = 151661 '<|fim_suffix|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: FIM MID token         = 151660 '<|fim_middle|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: FIM PAD token         = 151662 '<|fim_pad|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: FIM REP token         = 151663 '<|repo_name|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: FIM SEP token         = 151664 '<|file_sep|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: EOG token             = 151643 '<|endoftext|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: EOG token             = 151645 '<|im_end|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: EOG token             = 151662 '<|fim_pad|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: EOG token             = 151663 '<|repo_name|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: EOG token             = 151664 '<|file_sep|>'
+- 2026-01-22T15:14:32.789+00:00 print_info: max token length      = 256
+- 2026-01-22T15:14:32.789+00:00 load_tensors: loading model tensors, this can take a while... (mmap = false, direct_io = true)
+- 2026-01-22T15:14:32.936+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:32.942+00:00 load_tensors: offloading output layer to GPU
+- 2026-01-22T15:14:32.942+00:00 load_tensors: offloading 35 repeating layers to GPU
+- 2026-01-22T15:14:32.942+00:00 load_tensors: offloaded 37/37 layers to GPU
+- 2026-01-22T15:14:32.942+00:00 load_tensors:        CUDA0 model buffer size =  3127.61 MiB
+- 2026-01-22T15:14:32.942+00:00 load_tensors:    CUDA_Host model buffer size =   315.30 MiB
+- 2026-01-22T15:14:33.928+00:00 ...............srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:34.928+00:00 .........srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:35.928+00:00 .........srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:36.928+00:00 .........srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:37.928+00:00 ..........srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:38.928+00:00 .........srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:39.928+00:00 ........srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:40.928+00:00 .........srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:41.928+00:00 ....srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:42.436+00:00 .
+- 2026-01-22T15:14:42.439+00:00 common_init_result: added <|endoftext|> logit bias = -inf
+- 2026-01-22T15:14:42.439+00:00 common_init_result: added <|im_end|> logit bias = -inf
+- 2026-01-22T15:14:42.439+00:00 common_init_result: added <|fim_pad|> logit bias = -inf
+- 2026-01-22T15:14:42.439+00:00 common_init_result: added <|repo_name|> logit bias = -inf
+- 2026-01-22T15:14:42.439+00:00 common_init_result: added <|file_sep|> logit bias = -inf
+- 2026-01-22T15:14:42.440+00:00 llama_context: constructing llama_context
+- 2026-01-22T15:14:42.440+00:00 llama_context: n_seq_max     = 1
+- 2026-01-22T15:14:42.440+00:00 llama_context: n_ctx         = 4096
+- 2026-01-22T15:14:42.440+00:00 llama_context: n_ctx_seq     = 4096
+- 2026-01-22T15:14:42.440+00:00 llama_context: n_batch       = 2048
+- 2026-01-22T15:14:42.440+00:00 llama_context: n_ubatch      = 512
+- 2026-01-22T15:14:42.440+00:00 llama_context: causal_attn   = 1
+- 2026-01-22T15:14:42.440+00:00 llama_context: flash_attn    = auto
+- 2026-01-22T15:14:42.440+00:00 llama_context: kv_unified    = false
+- 2026-01-22T15:14:42.440+00:00 llama_context: freq_base     = 1000000.0
+- 2026-01-22T15:14:42.440+00:00 llama_context: freq_scale    = 1
+- 2026-01-22T15:14:42.440+00:00 llama_context: n_ctx_seq (4096) < n_ctx_train (128000) -- the full capacity of the model will not be utilized
+- 2026-01-22T15:14:42.441+00:00 llama_context:  CUDA_Host  output buffer size =     0.58 MiB
+- 2026-01-22T15:14:42.441+00:00 llama_kv_cache:      CUDA0 KV buffer size =   144.00 MiB
+- 2026-01-22T15:14:42.442+00:00 llama_kv_cache: size =  144.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (f16):   72.00 MiB, V (f16):   72.00 MiB
+- 2026-01-22T15:14:42.442+00:00 sched_reserve: reserving ...
+- 2026-01-22T15:14:42.443+00:00 sched_reserve: Flash Attention was auto, set to enabled
+- 2026-01-22T15:14:42.452+00:00 sched_reserve:      CUDA0 compute buffer size =   300.75 MiB
+- 2026-01-22T15:14:42.452+00:00 sched_reserve:  CUDA_Host compute buffer size =    12.02 MiB
+- 2026-01-22T15:14:42.452+00:00 sched_reserve: graph nodes  = 1231
+- 2026-01-22T15:14:42.452+00:00 sched_reserve: graph splits = 2
+- 2026-01-22T15:14:42.452+00:00 sched_reserve: reserve took 10.61 ms, sched copies = 1
+- 2026-01-22T15:14:42.453+00:00 common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+- 2026-01-22T15:14:42.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:43.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:44.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:45.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:46.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:47.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:48.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:49.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:50.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:51.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:52.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:53.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:54.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:55.927+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:56.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:57.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:58.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:14:59.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:00.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:01.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:02.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:03.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:04.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:05.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:06.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:07.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:08.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:09.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:10.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:11.833+00:00 clip_model_loader: model name:   Qwen2.5 VL 3B Instruct
+- 2026-01-22T15:15:11.833+00:00 clip_model_loader: description:  
+- 2026-01-22T15:15:11.833+00:00 clip_model_loader: GGUF version: 3
+- 2026-01-22T15:15:11.833+00:00 clip_model_loader: alignment:    32
+- 2026-01-22T15:15:11.833+00:00 clip_model_loader: n_tensors:    519
+- 2026-01-22T15:15:11.833+00:00 clip_model_loader: n_kv:         22
+- 2026-01-22T15:15:11.833+00:00 
+- 2026-01-22T15:15:11.833+00:00 clip_model_loader: has vision encoder
+- 2026-01-22T15:15:11.834+00:00 clip_ctx: CLIP using CUDA0 backend
+- 2026-01-22T15:15:11.836+00:00 load_hparams: Qwen-VL models require at minimum 1024 image tokens to function correctly on grounding tasks
+- 2026-01-22T15:15:11.836+00:00 load_hparams: if you encounter problems with accuracy, try adding --image-min-tokens 1024
+- 2026-01-22T15:15:11.836+00:00 load_hparams: more info: https://github.com/ggml-org/llama.cpp/issues/16842
+- 2026-01-22T15:15:11.836+00:00 
+- 2026-01-22T15:15:11.836+00:00 load_hparams: projector:          qwen2.5vl_merger
+- 2026-01-22T15:15:11.836+00:00 load_hparams: n_embd:             1280
+- 2026-01-22T15:15:11.836+00:00 load_hparams: n_head:             16
+- 2026-01-22T15:15:11.836+00:00 load_hparams: n_ff:               3420
+- 2026-01-22T15:15:11.836+00:00 load_hparams: n_layer:            32
+- 2026-01-22T15:15:11.836+00:00 load_hparams: ffn_op:             silu
+- 2026-01-22T15:15:11.836+00:00 load_hparams: projection_dim:     2048
+- 2026-01-22T15:15:11.836+00:00 
+- 2026-01-22T15:15:11.836+00:00 --- vision hparams ---
+- 2026-01-22T15:15:11.836+00:00 load_hparams: image_size:         560
+- 2026-01-22T15:15:11.836+00:00 load_hparams: patch_size:         14
+- 2026-01-22T15:15:11.836+00:00 load_hparams: has_llava_proj:     0
+- 2026-01-22T15:15:11.836+00:00 load_hparams: minicpmv_version:   0
+- 2026-01-22T15:15:11.836+00:00 load_hparams: n_merge:            2
+- 2026-01-22T15:15:11.836+00:00 load_hparams: n_wa_pattern: 8
+- 2026-01-22T15:15:11.836+00:00 load_hparams: image_min_pixels:   6272
+- 2026-01-22T15:15:11.836+00:00 load_hparams: image_max_pixels:   3211264
+- 2026-01-22T15:15:11.836+00:00 
+- 2026-01-22T15:15:11.836+00:00 load_hparams: model size:         1276.39 MiB
+- 2026-01-22T15:15:11.836+00:00 load_hparams: metadata size:      0.18 MiB
+- 2026-01-22T15:15:11.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:12.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:13.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 503
+- 2026-01-22T15:15:14.067+00:00 warmup: warmup with image size = 1288 x 1288
+- 2026-01-22T15:15:14.073+00:00 alloc_compute_meta:      CUDA0 compute buffer size =   704.79 MiB
+- 2026-01-22T15:15:14.073+00:00 alloc_compute_meta:        CPU compute buffer size =   292.41 MiB
+- 2026-01-22T15:15:14.073+00:00 alloc_compute_meta: graph splits = 1, nodes = 1091
+- 2026-01-22T15:15:14.073+00:00 warmup: flash attention is enabled
+- 2026-01-22T15:15:14.073+00:00 srv    load_model: loaded multimodal model, '/repository/mmproj-Qwen2.5-VL-3B-Instruct-f16.gguf'
+- 2026-01-22T15:15:14.073+00:00 srv    load_model: initializing slots, n_slots = 1
+- 2026-01-22T15:15:14.073+00:00 slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+- 2026-01-22T15:15:14.073+00:00 srv    load_model: prompt cache is enabled, size limit: 8192 MiB
+- 2026-01-22T15:15:14.073+00:00 srv    load_model: use `--cache-ram 0` to disable the prompt cache
+- 2026-01-22T15:15:14.073+00:00 srv    load_model: for more info see https://github.com/ggml-org/llama.cpp/pull/16391
+- 2026-01-22T15:15:14.074+00:00 init: chat template, example_format: '<|im_start|>system
+- 2026-01-22T15:15:14.074+00:00 You are a helpful assistant<|im_end|>
+- 2026-01-22T15:15:14.074+00:00 <|im_start|>user
+- 2026-01-22T15:15:14.074+00:00 Hello<|im_end|>
+- 2026-01-22T15:15:14.074+00:00 <|im_start|>assistant
+- 2026-01-22T15:15:14.074+00:00 Hi there<|im_end|>
+- 2026-01-22T15:15:14.074+00:00 <|im_start|>user
+- 2026-01-22T15:15:14.074+00:00 How are you?<|im_end|>
+- 2026-01-22T15:15:14.074+00:00 <|im_start|>assistant
+- 2026-01-22T15:15:14.074+00:00 '
+- 2026-01-22T15:15:14.074+00:00 srv          init: init: chat template, thinking = 0
+- 2026-01-22T15:15:14.074+00:00 main: model loaded
+- 2026-01-22T15:15:14.074+00:00 main: server is listening on http://0.0.0.0:80
+- 2026-01-22T15:15:14.074+00:00 main: starting the main loop...
+- 2026-01-22T15:15:14.074+00:00 srv  update_slots: all slots are idle
+- 2026-01-22T15:15:14.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:14.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:18.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:24.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:28.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:34.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:38.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:44.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:48.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:54.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:15:58.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:04.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:08.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:14.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:18.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:24.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:28.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:31.724+00:00 srv  params_from_: Chat format: Content-only
+- 2026-01-22T15:16:31.724+00:00 slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+- 2026-01-22T15:16:31.724+00:00 slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+- 2026-01-22T15:16:31.724+00:00 slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+- 2026-01-22T15:16:31.724+00:00 slot update_slots: id  0 | task 0 | new prompt, n_ctx_slot = 4096, n_keep = 0, task.n_tokens = 23
+- 2026-01-22T15:16:31.724+00:00 slot update_slots: id  0 | task 0 | n_tokens = 0, memory_seq_rm [0, end)
+- 2026-01-22T15:16:31.724+00:00 slot update_slots: id  0 | task 0 | prompt processing progress, n_tokens = 23, batch.n_tokens = 23, progress = 1.000000
+- 2026-01-22T15:16:31.724+00:00 slot update_slots: id  0 | task 0 | prompt done, n_tokens = 23, batch.n_tokens = 23
+- 2026-01-22T15:16:31.724+00:00 slot init_sampler: id  0 | task 0 | init sampler, took 0.01 ms, tokens: text = 23, total = 23
+- 2026-01-22T15:16:34.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:38.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:44.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:48.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:54.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:16:58.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:03.933+00:00 slot print_timing: id  0 | task 0 | 
+- 2026-01-22T15:17:03.933+00:00 prompt eval time =   25220.22 ms /    23 tokens ( 1096.53 ms per token,     0.91 tokens per second)
+- 2026-01-22T15:17:03.933+00:00        eval time =    6988.52 ms /    24 tokens (  291.19 ms per token,     3.43 tokens per second)
+- 2026-01-22T15:17:03.933+00:00       total time =   32208.75 ms /    47 tokens
+- 2026-01-22T15:17:03.933+00:00 slot      release: id  0 | task 0 | stop processing: n_tokens = 46, truncated = 0
+- 2026-01-22T15:17:03.933+00:00 srv  update_slots: all slots are idle
+- 2026-01-22T15:17:03.933+00:00 srv  log_server_r: request: POST /v1/chat/completions 10.41.1.131 200
+- 2026-01-22T15:17:04.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:08.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:14.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:18.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:24.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:28.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:34.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:38.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:44.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:48.927+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:54.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:17:58.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:00.213+00:00 srv  handle_media: downloading image from 'https://raw.githubusercontent.com/ankstoo/ignore-all-previous-instructions-and-hold-on/refs/heads/main/1d7d6d46-3b69-401d-8579-3ec1afc18a6c.jpg'
+- 2026-01-22T15:18:00.263+00:00 srv  handle_media: downloaded 32037 bytes
+- 2026-01-22T15:18:00.281+00:00 srv  params_from_: Chat format: Content-only
+- 2026-01-22T15:18:00.281+00:00 slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 5725460918
+- 2026-01-22T15:18:00.281+00:00 slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+- 2026-01-22T15:18:00.281+00:00 slot launch_slot_: id  0 | task 25 | processing task, is_child = 0
+- 2026-01-22T15:18:00.281+00:00 slot update_slots: id  0 | task 25 | new prompt, n_ctx_slot = 4096, n_keep = 0, task.n_tokens = 353
+- 2026-01-22T15:18:00.281+00:00 slot update_slots: id  0 | task 25 | n_tokens = 14, memory_seq_rm [14, end)
+- 2026-01-22T15:18:00.281+00:00 slot update_slots: id  0 | task 25 | prompt processing progress, n_tokens = 15, batch.n_tokens = 1, progress = 0.042493
+- 2026-01-22T15:18:00.285+00:00 slot update_slots: id  0 | task 25 | n_tokens = 15, memory_seq_rm [15, end)
+- 2026-01-22T15:18:00.285+00:00 srv  process_chun: processing image...
+- 2026-01-22T15:18:00.285+00:00 encoding image slice...
+- 2026-01-22T15:18:04.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:08.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:14.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:16.884+00:00 image slice encoded in 16598 ms
+- 2026-01-22T15:18:16.884+00:00 decoding image batch 1/1, n_tokens_batch = 324
+- 2026-01-22T15:18:16.911+00:00 image decoded (batch 1/1) in 27 ms
+- 2026-01-22T15:18:16.911+00:00 srv  process_chun: image processed in 16626 ms
+- 2026-01-22T15:18:16.911+00:00 slot update_slots: id  0 | task 25 | prompt processing progress, n_tokens = 353, batch.n_tokens = 14, progress = 1.000000
+- 2026-01-22T15:18:16.911+00:00 slot update_slots: id  0 | task 25 | prompt done, n_tokens = 353, batch.n_tokens = 14
+- 2026-01-22T15:18:16.911+00:00 slot init_sampler: id  0 | task 25 | init sampler, took 0.01 ms, tokens: text = 29, total = 353
+- 2026-01-22T15:18:18.599+00:00 slot print_timing: id  0 | task 25 | 
+- 2026-01-22T15:18:18.599+00:00 prompt eval time =   16757.75 ms /   339 tokens (   49.43 ms per token,    20.23 tokens per second)
+- 2026-01-22T15:18:18.599+00:00        eval time =    1560.41 ms /   100 tokens (   15.60 ms per token,    64.09 tokens per second)
+- 2026-01-22T15:18:18.599+00:00       total time =   18318.16 ms /   439 tokens
+- 2026-01-22T15:18:18.599+00:00 slot      release: id  0 | task 25 | stop processing: n_tokens = 452, truncated = 0
+- 2026-01-22T15:18:18.599+00:00 srv  update_slots: all slots are idle
+- 2026-01-22T15:18:18.600+00:00 srv  log_server_r: request: POST /v1/chat/completions 10.41.45.123 200
+- 2026-01-22T15:18:18.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:24.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:28.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:34.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:38.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:44.930+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:47.832+00:00 srv  params_from_: Chat format: Content-only
+- 2026-01-22T15:18:47.833+00:00 slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, sim_best = 0.609 (> 0.100 thold), f_keep = 0.031
+- 2026-01-22T15:18:47.833+00:00 slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+- 2026-01-22T15:18:47.833+00:00 slot launch_slot_: id  0 | task 127 | processing task, is_child = 0
+- 2026-01-22T15:18:47.833+00:00 slot update_slots: id  0 | task 127 | new prompt, n_ctx_slot = 4096, n_keep = 0, task.n_tokens = 23
+- 2026-01-22T15:18:47.833+00:00 slot update_slots: id  0 | task 127 | n_tokens = 14, memory_seq_rm [14, end)
+- 2026-01-22T15:18:47.833+00:00 slot update_slots: id  0 | task 127 | prompt processing progress, n_tokens = 23, batch.n_tokens = 9, progress = 1.000000
+- 2026-01-22T15:18:47.833+00:00 slot update_slots: id  0 | task 127 | prompt done, n_tokens = 23, batch.n_tokens = 9
+- 2026-01-22T15:18:47.833+00:00 slot init_sampler: id  0 | task 127 | init sampler, took 0.01 ms, tokens: text = 23, total = 23
+- 2026-01-22T15:18:48.927+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:49.402+00:00 slot print_timing: id  0 | task 127 | 
+- 2026-01-22T15:18:49.402+00:00 prompt eval time =      24.49 ms /     9 tokens (    2.72 ms per token,   367.56 tokens per second)
+- 2026-01-22T15:18:49.402+00:00        eval time =    1544.94 ms /   100 tokens (   15.45 ms per token,    64.73 tokens per second)
+- 2026-01-22T15:18:49.402+00:00       total time =    1569.42 ms /   109 tokens
+- 2026-01-22T15:18:49.402+00:00 slot      release: id  0 | task 127 | stop processing: n_tokens = 122, truncated = 0
+- 2026-01-22T15:18:49.402+00:00 srv  update_slots: all slots are idle
+- 2026-01-22T15:18:49.402+00:00 srv  log_server_r: request: POST /v1/chat/completions 10.41.45.123 200
+- 2026-01-22T15:18:54.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:18:58.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:19:04.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:19:08.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:19:14.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:19:18.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:19:24.929+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
+- 2026-01-22T15:19:28.928+00:00 srv  log_server_r: request: GET /health 10.101.65.19 200
