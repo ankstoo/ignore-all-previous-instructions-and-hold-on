@@ -32,7 +32,7 @@ After this image is processed:
 This is not a client-side issue. The same behavior occurs:
 
 - In HuggingFace Playground
-- From a Django client
+- From a python OpenAI client
 - With `stream=true` and `stream=false`
 
 The problem is deterministic and reproducible.
@@ -46,9 +46,14 @@ The problem is deterministic and reproducible.
 {
   "model": "ggml-org/Qwen2.5-VL-3B-Instruct-GGUF",
   "messages": [
-    { "role": "user", "content": "Are you ready?" }
+    {
+      "role": "user",
+      "content": "Are you ready?"
+    }
   ],
-  "max_tokens": 10
+  "stream": false,
+  "max_tokens": 100,
+  "temperature": 0
 }
 ```
 → Response is normal.
@@ -61,17 +66,22 @@ The problem is deterministic and reproducible.
     {
       "role": "user",
       "content": [
-        { "type": "text", "text": "Describe this image" },
         {
           "type": "image_url",
           "image_url": {
             "url": "https://raw.githubusercontent.com/ankstoo/ignore-all-previous-instructions-and-hold-on/refs/heads/main/1d7d6d46-3b69-401d-8579-3ec1afc18a6c.jpg"
           }
+        },
+        {
+          "type": "text",
+          "text": "Describe this image in one sentence."
         }
       ]
     }
   ],
-  "max_tokens": 100
+  "stream": false,
+  "max_tokens": 100,
+  "temperature": 0
 }
 ```
 → The model responds with a sequence of ??????????.
@@ -81,9 +91,14 @@ The problem is deterministic and reproducible.
 {
   "model": "ggml-org/Qwen2.5-VL-3B-Instruct-GGUF",
   "messages": [
-    { "role": "user", "content": "Hello" }
+    {
+      "role": "user",
+      "content": "Are you ready?"
+    }
   ],
-  "max_tokens": 10
+  "stream": false,
+  "max_tokens": 100,
+  "temperature": 0
 }
 ```
 → The response is again ??????????.
